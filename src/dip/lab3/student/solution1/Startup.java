@@ -16,7 +16,13 @@ public class Startup {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Reader reader = new KeyboardReader();
+        Writer writer = new ConsoleWriter();
+        Writer writer2 = new GuiWriter();
         
+        Copier copier = new Copier(reader, writer);
+        //Copier copier2 = new Copier(reader, writer2);
+        copier.copy();
     }
     
 }
