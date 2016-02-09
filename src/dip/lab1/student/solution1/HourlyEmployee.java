@@ -2,24 +2,31 @@ package dip.lab1.student.solution1;
 
 
 /**
- * An implementation sub-class of an Employee. These are low-level classes
- * in the DIP. Does it meet the rules of DIP? If not fix it.
- *
  * @author Phillip
  */
-public class HourlyEmployee extends Employee {
-    
-    /** default constructor. Is this the best way to go? */
-    public HourlyEmployee() {}
 
-    /**
-     * Convenience constructor. Is this the best way to go?
-     * @param hourlyRate - the rate per hour that the employee is paid
-     * @param totalHrsForYear - total hours worked or predicted per year
-     */
+public class HourlyEmployee implements Employee {
+       
+    //public HourlyEmployee() {}
+    
+    public double hourlyRate;
+    public double totalHrsForYear;
+    
     public HourlyEmployee(double hourlyRate, double totalHrsForYear) {
         setHourlyRate(hourlyRate);
         setTotalHrsForYear(totalHrsForYear);
     }
-
+    
+    public final double getAnnualWages(){
+        return hourlyRate * totalHrsForYear;
+    }
+    public final double getHourlyRate(){
+        return hourlyRate;
+    }
+    public final void setHourlyRate(double hourlyRate){
+        this.hourlyRate = hourlyRate;
+    }
+    public final void setTotalHrsForYear(double totalHrsForYear){
+        this.totalHrsForYear = totalHrsForYear;
+    }
 }
