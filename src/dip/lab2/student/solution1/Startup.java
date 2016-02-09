@@ -19,18 +19,16 @@ import javax.swing.JOptionPane;
  * @author Phillip
  */
 public class Startup {
-    public static enum ServiceQuality {
+    /*public static enum ServiceQuality {
            GOOD, FAIR, POOR
-    };
+    };*/
  
     public static void main(String[] args) {
-        //I KNOW I did this one wrong. I don't get enums inside of constructors.
-        FoodServiceTipCalculator waiter = new FoodServiceTipCalculator();
-        waiter.setServiceRating(FoodServiceTipCalculator.ServiceQuality.GOOD);
-        waiter.setBill(25.00);
-        BaggageServiceTipCalculator bellhop = new BaggageServiceTipCalculator();
-        bellhop.setServiceRating(BaggageServiceTipCalculator.ServiceQuality.GOOD);
-        bellhop.setBagCount(3);
+        TipCalculator calc = new FoodServiceTipCalculator(ServiceQuality.GOOD, 
+                100);
+        TipService mgr = new TipService(calc);
+        double amt = mgr.getTip();
+        System.out.println(amt);
     }
 
 }
