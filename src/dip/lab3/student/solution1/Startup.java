@@ -19,14 +19,14 @@ public class Startup {
         
         
         // TODO code application logic here
-        /*Reader reader = new KeyboardReader();
+        Reader reader = new KeyboardReader();
         Writer writer = new ConsoleWriter();
         Writer writer2 = new GuiWriter();
         
         Copier copier = new Copier(reader, writer);
         Copier copier2 = new Copier(reader, writer2);
         copier.copy();
-        copier2.copy();*/
+        copier2.copy();
     }
     
 }
