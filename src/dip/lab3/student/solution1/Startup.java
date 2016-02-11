@@ -21,8 +21,9 @@ public class Startup {
         Writer writer2 = new GuiWriter();
         
         Copier copier = new Copier(reader, writer);
-        //Copier copier2 = new Copier(reader, writer2);
+        Copier copier2 = new Copier(reader, writer2);
         copier.copy();
+        copier2.copy();
     }
     
 }
