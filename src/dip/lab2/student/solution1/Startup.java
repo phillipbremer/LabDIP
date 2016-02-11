@@ -1,21 +1,9 @@
 package dip.lab2.student.solution1;
 
-// An useful import if you need it.
 import java.text.NumberFormat;
-// Another useful import if you need it.
 import javax.swing.JOptionPane;
 
-/**
- * Just a test class for input and output.
- *
- * 1. Create instances of low-level classes using Liskov Substitution principle.
- * 2. Create an instance of your high-level class.
- * 3. Pass one of your calculator instances to the high-level class and
- *    check the results.
- * 4. Now switch to a different calculator instance and pass that to the
- *    high-level class. Did it work? Are the low-level instances
- *    interchangeable? The DIP requires this.
- * 
+/** 
  * @author Phillip
  */
 public class Startup {
@@ -29,6 +17,20 @@ public class Startup {
         TipService mgr = new TipService(calc);
         double amt = mgr.getTip();
         System.out.println(amt);
+        
+        BarServiceTipCalculator bars = new BarServiceTipCalculator(30,
+            ServiceQuality.FAIR);
+        TipService barMgr = new TipService(bars);
+        double amt2 = barMgr.getTip();
+        System.out.println(amt2);
+        
+        BarberServiceTipCalculator barb = new BarberServiceTipCalculator(15.50,
+            ServiceQuality.GOOD);
+        TipService barbMgr = new TipService(barb);
+        double amt3 = mgr.getTip();
+        System.out.println(amt3);
+        
+        
     }
 
 }
