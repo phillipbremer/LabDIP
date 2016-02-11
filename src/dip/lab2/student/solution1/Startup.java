@@ -27,7 +27,7 @@ public class Startup {
         BarberServiceTipCalculator barb = new BarberServiceTipCalculator(15.50,
             ServiceQuality.GOOD);
         TipService barbMgr = new TipService(barb);
-        double amt3 = mgr.getTip();
+        double amt3 = barbMgr.getTip();
         System.out.println(amt3);
         
         
