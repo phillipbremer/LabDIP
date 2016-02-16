@@ -10,7 +10,11 @@ import javax.swing.JOptionPane;
  * @author pbremer
  */
 public class GuiWriter implements Writer {
-     public void writeln(String line){
+    @Override 
+    public void writeln(String line){
+        //I'm not quite sure why this part isn't working as needed
+            //Looked at instructor code and couldn't think of an exact solution
+            //for my problem with my code without copying what you had.
          JOptionPane.showMessageDialog(null, line);
      }
 }
